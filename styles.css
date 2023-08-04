@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+/* KEYFRAMES  */
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+/* Direct to home Icon  */
+.upArrow {
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10;
+  bottom: 5vh;
+  right: 5vw;
+  cursor: pointer;
+  visibility: hidden;
+  transition: 200ms;
+}
+
+.upArrowShow {
+  visibility: visible;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  background-color: hsl(218, 28%, 13%);
+}
+
+/* HOME STARTS HERE */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 5vw;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#home {
+  z-index: 4;
+  background-color: hsl(217, 28%, 15%);
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.nav ul {
+  width: 20vw;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav ul li {
+  opacity: 0.8;
+  position: relative;
+  transition: 100ms;
+}
+
+.navListItem::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 300ms;
+  background-color: rgb(101, 226, 217);
+}
+
+.navListItem:hover::after {
+  transform: scale(1);
+}
+
+.nav ul li:hover {
+  opacity: 1;
+}
+
+.homeContent {
+  text-align: center;
+  /* top: 50%;
+  left: 50%; */
+}
+
+.homeImage {
+  max-width: 45vw;
+}
+
+.homedts {
+  max-width: 50vw;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.homeHeading {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.3rem;
+  margin: 30px 0;
+}
+
+.homeDes {
+  padding: 0 30px;
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.getStarted {
+  margin: 20px auto;
+  background-color: hsl(176, 68%, 64%);
+  font-family: "Raleway", sans-serif;
+  width: 16vw;
+  padding: 15px 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.getStarted:hover {
+  background-color: hsl(198, 60%, 50%);
+  transform: scale(1.01);
+}
+
+.homeBgSVG {
+  position: absolute;
+  bottom: -1%;
+  left: 0;
+  z-index: -1;
+  /* margin-top: 50vh; */
+  width: 100%;
+}
+
+/* FEATURES STARTS HERE */
+#features {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 15vh;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+}
+
+.feature {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Left Features */
+.leftFeature {
+  margin-left: -50px;
+  opacity: 0;
+  transition: 700ms;
+}
+
+/* Right Features */
+.rightFeature {
+  margin-right: -50px;
+  opacity: 0;
+  transition: 1500ms;
+}
+
+/* feature animations when scrolll */
+.featureAnimeLeft {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.featureAnimeRight {
+  margin-right: 0;
+  opacity: 1;
+}
+
+.featureImage {
+  min-height: 88px;
+}
+
+.featureHeading {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.featureDes {
+  opacity: 0.9;
+  font-family: "Open Sans", sans-serif;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* TEAM */
+.teamOverview {
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.overview {
+  margin: auto auto;
+}
+
+.overviewHeading {
+  font-family: "Raleway", sans-serif;
+  width: 50%;
+  margin-left: 10%;
+}
+
+.overviewDes {
+  font-family: "Open Sans", sans-serif;
+  margin: 2% 10%;
+  opacity: 0.9;
+}
+
+.detailsButton {
+  margin: 4% 10%;
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.detailsButton::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.1em;
+  width: 100%;
+  background-color: #00cdac;
+  transform: scale(0);
+  transform-origin: left;
+  transition: 300ms;
+}
+
+.detailsButton:hover::after {
+  transform: scale(1);
+}
+
+.teamComments {
+  width: 90vw;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.comment {
+  background-color: rgb(33, 41, 60);
+  font-family: "Open Sans", sans-serif;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px hsl(217, 30%, 12%);
+}
+
+.commentDes {
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.user {
+  display: flex;
+}
+
+.userProfileImg {
+  max-width: 40px;
+  border-radius: 50%;
+}
+.userDetails {
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+.userName {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.userProf {
+  font-size: 0.7rem;
+}
+
+#signIn {
+  position: relative;
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.signUpForm {
+  z-index: 1;
+  background-color: hsl(217, 28%, 15%);
+  display: inline-block;
+  text-align: center;
+  box-shadow: 3px 3px 20px 0 #0f0f0f;
+  transition: 500ms;
+}
+
+/* .signUpForm:hover {
+  transform: scale(1.01);
+} */
+
+.signInHeading {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 3vh;
+  margin-top: 30px;
+}
+
+.signInDes {
+  opacity: 0.9;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 auto 45px;
+  width: 70%;
+}
+
+.form input {
+  width: 30vw;
+  padding: 15px 0 15px 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+}
+
+.form button {
+  font-weight: 500;
+  font-size: 1rem;
+  /* width: 15vw; */
+  margin-right: 20px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: hsl(176, 68%, 64%);
+  font-family: "Raleway", sans-serif;
+  color: white;
+  transition: 300ms;
+}
+
+.form button:hover {
+  cursor: pointer;
+  background-color: hsl(198, 60%, 50%);
+}
+
+footer {
+  opacity: 0.9;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  background-color: hsl(216, 53%, 9%);
+}
+
+.footerLogo {
+  padding-top: 10vh;
+  margin-bottom: 3vh;
+  margin-left: 2vw;
+}
+
+.footerLogo img {
+  width: 110px;
+}
+
+.footerDeatils {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 5vh;
+}
+
+.footerDes {
+  /* width: 30vw; */
+  display: inline-block;
+}
+
+.sIcons {
+  width: 20px;
+  fill: white;
+}
+
+@media (max-width: 900px) {
+  .nav ul {
+    width: 50vw;
+  }
+
+  .nav ul li {
+    display: inline-block;
+  }
+
+  .homeContent {
+    margin-top: 60px;
+  }
+
+  .homedts {
+    min-width: 75vw;
+    margin-top: 70px;
+  }
+
+  .homeHeading {
+    font-size: 1.9rem;
+    margin-bottom: 50px;
+  }
+
+  .homeDes {
+    font-size: 0.8rem;
+    margin-bottom: 50px;
+  }
+
+  .getStarted {
+    width: 50%;
+  }
+
+  #features {
+    grid-template-columns: auto;
+  }
+
+  .featureDes {
+    font-size: 14px;
+  }
+
+  .teamOverview {
+    flex-direction: column;
+  }
+
+  .overviewHeading {
+    margin-top: 70px;
+  }
+
+  .overviewDes {
+    font-size: 14px;
+  }
+
+  .teamComments {
+    grid-template-columns: auto;
+    gap: 60px;
+    width: 70vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .homedts {
+    min-width: 80vw;
+  }
+  .homeHeading {
+    font-size: 1.7rem;
+  }
+
+  .homeDes {
+    font-size: 0.73rem;
+  }
+
+  .getStarted {
+    width: 70%;
+  }
+  .homeImage {
+    min-width: 60vw;
+  }
+
+  .overviewHeading {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    width: 90%;
+    font-size: 1.7rem;
+  }
+  .overviewDes {
+    font-size: 0.8rem;
+  }
+
+  .teamComments {
+    width: 85vw;
+    min-width: 10vh;
+  }
+
+  .signUpForm {
+    width: 90vw;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form input {
+    width: 70vw;
+    margin: 20px auto;
+  }
+
+  .form button {
+    width: 75vw;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .footerLogo {
+    margin-left: 10vw;
+  }
+
+  .footerLogo img {
+    width: 160px;
+  }
+
+  .footerDeatils {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5vh;
+    margin-left: -5vw;
+  }
+}
